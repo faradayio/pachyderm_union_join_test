@@ -1,0 +1,27 @@
+{
+  "pipeline": {
+    "name": "zipjoin"
+  },
+  "transform": {
+    "image": "zipjoin",
+  },
+  "parallelism_spec": {
+    "strategy": "CONSTANT",
+    "constant": 4
+  },
+  "join_type": "UNION",
+  "inputs": [
+    {
+      "repo": {
+        "name": "population"
+      },
+      "glob": "/*"
+    },
+    {
+      "repo": {
+        "name": "latlon"
+      },
+      "glob": "/*"
+    }
+  ]
+}
